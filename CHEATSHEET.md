@@ -43,3 +43,15 @@ llama3:8b               365c0bd3c000    4.7 GB  17 minutes ago
 % poetry install --no-root
 
 ```
+
+### Activate our virtual environment with the installed dependencies
+
+```sh
+% poetry shell
+Spawning shell within /Users/rob/Library/Caches/pypoetry/virtualenvs/marketing-crew-LQXOd6n7-py3.11
+rob@prism instagram-llama3-crewai % emulate bash -c '. /Users/rob/Library/Caches/pypoetry/virtualenvs/marketing-crew-LQXOd6n7-py3.11/bin/activate'
+(marketing-crew-py3.11) rob@prism instagram-llama3-crewai % 
+
+```
+
+TIP: Copy and paste the full shell path - `/Users/rob/Library/Caches/pypoetry/virtualenvs/marketing-crew-LQXOd6n7-py3.11` in the above example - to be used as the path to your interpreter in VS Code.
