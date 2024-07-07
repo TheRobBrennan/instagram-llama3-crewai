@@ -1,0 +1,19 @@
+{
+  "name": "instagram-llama3-crewai",
+  "version": "0.0.0",
+  "description": "Example to explore locally-hosted LLMs based on the example at https://github.com/bhancockio/instagram-llama3-crewai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRobBrennan/instagram-llama3-crewai.git"
+  },
+  "author": "Rob Brennan <rob@sploosh.ai>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheRobBrennan/instagram-llama3-crewai/issues"
+  },
+  "homepage": "https://github.com/TheRobBrennan/instagram-llama3-crewai#readme"
+}
