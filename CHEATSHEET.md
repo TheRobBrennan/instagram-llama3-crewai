@@ -1,5 +1,72 @@
 # Welcome
 
+If you have just cloned this repo, please be sure to follow the `Initial setup` instructions below.
+
+## Example 1 - Use a locally-hosted LLM
+
+If you have this project correctly configured - and `ollama` serving the custom model we specified in the `Modelfile` - you can run this project with the following commands:
+
+```sh
+# Activate our virtual environment with the installed dependencies
+% poetry shell
+
+# Run our crew(s)
+% time python main.py
+
+```
+
+After making sure that the proper local model was configured - and that `max_rpm` was not restricting rate limiting - here is the final result including how long the first run took on my machine:
+
+- 2021 14" MacBook Pro
+  - Apple M1 Max
+  - 64 GB memory
+  - 2 TB SSD
+  - macOS Sonoma `14.5`
+    - Node.js `v20.11.1`
+    - npm `10.8.1`
+    - Python `3.11.1`
+
+```sh
+########################
+## Here is the result
+########################
+
+Your post copy:
+**
+Here are my three options for an engaging Instagram post copy:
+
+Option 1:
+"Ready to take your coffee game to the next level? Introducing our Ember Temperature Control Mug! Say goodbye to lukewarm coffee and hello to a perfect cup every time #temperaturecontrolmug #coffeeaddict"
+
+Option 2:
+"Durable, spill-proof, and perfect for daily use - that's what sets our Tempē Coffee Mug apart from the rest! Are you tired of dealing with messy coffee cups? Let us help you level up your morning routine with our Tempē Mug! #durablemug #coffeesolver"
+
+Option 3:
+"Get ready to zing up your morning! Our versatile Zing Anything Mug is designed for hot and cold beverages, making it the perfect companion for any coffee lover. Plus, its unique design will keep your drinks at the ideal temperature all day long! #zingeverything #coffeeonthe go"
+
+These options highlight the unique features of each mug and appeal to coffee enthusiasts, encouraging engagement and potential purchases on Instagram.
+'
+
+Your midjourney description:
+Based on our conversation, here are three reviewed options of photographs that align with the product's goals:
+
+**Option 1:** "Hands-free Moment"
+Description: Capture a high-tech airplain in a beautiful blue sky during a breathtaking sunset. The airplan should be in a beautiful and sleek design, with a smart LED display highlighting the temperature control feature.
+In this scenario, we'll create a stunning visual that showcases the convenience of using a temperature control coffee mug while doing multiple tasks at once.
+
+**Option 2:** "The Daily Grind"
+Description: Depict an individual enjoying their morning routine with a warm, perfectly-tempered beverage from our temperature control coffee mug. The photo should be in 4K resolution, with a soft and natural lighting.
+In this scene, we'll capture the moment where someone is sipping from our product while feeling refreshed and ready for the day ahead.
+
+**Option 3:** "Caffeine-Fueled Productivity"
+Description: Show an individual in their workspace, intensely focused on their laptop or papers as steam rises from a cup of perfectly-tempered beverage. This photo should be crisp and sharp, with a sense of energy and productivity.
+In this scenario, we'll create a vivid visual that highlights how our temperature control coffee mug can fuel your day, allowing you to stay focused and energized.
+
+I hope these options meet the customer's expectations!
+python main.py  9.08s user 2.48s system 1% cpu 16:52.86 total
+
+```
+
 ## Initial setup - macOS
 
 ### Install Poetry
