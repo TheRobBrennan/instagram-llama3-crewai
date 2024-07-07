@@ -8,15 +8,18 @@ from tools.search_tools import SearchTools
 
 class MarketingAnalysisAgents:
     def __init__(self):
-        self.llm = ChatGroq(
-            api_key=os.getenv("GROQ_API_KEY"),
-            model="llama3-70b-8192"
-        )
-        # self.llm = ChatOpenAI(
-        #     model="crewai-llama3-8b",
-        #     base_url="http://localhost:11434/v1",
-        #     api_key="NA"
+        # self.llm = ChatGroq(
+        #     api_key=os.getenv("GROQ_API_KEY"),
+        #     model="llama3-70b-8192"
         # )
+
+        # ChatOpenAI enables us to work with our local models just like the OpenAI API
+        self.llm = ChatOpenAI(
+            model="crewai-llama3-8b",
+            base_url="http://localhost:11434/v1",
+            # API key is not required for local models, however the parameter is mandatory and cannot be an empty string
+            api_key="NA"
+        )
 
     def product_competitor_agent(self):
         return Agent(
