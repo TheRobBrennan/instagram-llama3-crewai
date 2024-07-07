@@ -38,8 +38,8 @@ copy_crew = Crew(
         write_copy
     ],
     verbose=True,
-    # Remove this when running locally. This helps prevent rate limiting with groq.
-    # max_rpm=1
+    # TODO: Comment this out when running locally. This helps prevent rate limiting with groq.
+    max_rpm=2
 )
 
 ad_copy = copy_crew.kickoff()
@@ -47,6 +47,7 @@ ad_copy = copy_crew.kickoff()
 # Create Crew responsible for Image
 senior_photographer = agents.senior_photographer_agent()
 chief_creative_diretor = agents.chief_creative_diretor_agent()
+
 # Create Tasks for Image
 take_photo = tasks.take_photograph_task(
     senior_photographer, ad_copy, product_website, product_details)
@@ -63,8 +64,8 @@ image_crew = Crew(
         approve_photo
     ],
     verbose=True,
-    # Remove this when running locally. This helps prevent rate limiting with groq.
-    # max_rpm=1
+    # TODO: Comment this out when running locally. This helps prevent rate limiting with groq.
+    max_rpm=2
 )
 
 image = image_crew.kickoff()
