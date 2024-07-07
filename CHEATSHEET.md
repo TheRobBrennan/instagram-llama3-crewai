@@ -35,3 +35,11 @@ crewai-llama3-8b:latest e24ebf105f8e    4.7 GB  13 seconds ago
 llama3:8b               365c0bd3c000    4.7 GB  17 minutes ago
 
 ```
+
+### Setup our development environment
+
+```sh
+# Install dependencies from pyproject.toml
+% poetry install --no-root
+
+```
