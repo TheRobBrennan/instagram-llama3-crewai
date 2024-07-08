@@ -2,8 +2,16 @@ from agents import MarketingAnalysisAgents
 from tasks import MarketingAnalysisTasks
 from crewai import Crew
 from dotenv import load_dotenv
+import os
+
 load_dotenv()
 
+# Get max_rpm from environment variable, default to None if not set
+# TODO: Define MAX_RPM in the .env file for a specific rate limit (such as when using GroqCloud-hosted models)
+max_rpm = os.getenv('MAX_RPM')
+if max_rpm is not None:
+    max_rpm = int(max_rpm)
+    print(f"Setting max_rpm to {max_rpm} from environment variable" )
 
 tasks = MarketingAnalysisTasks()
 agents = MarketingAnalysisAgents()
@@ -15,6 +23,7 @@ product_details = "Our temperature control coffee mug allows you to set your pre
 product_competitor_agent = agents.product_competitor_agent()
 strategy_planner_agent = agents.strategy_planner_agent()
 creative_agent = agents.creative_content_creator_agent()
+
 # Create Tasks
 website_analysis = tasks.product_analysis(
     product_competitor_agent, product_website, product_details)
@@ -38,8 +47,7 @@ copy_crew = Crew(
         write_copy
     ],
     verbose=True,
-    # TODO: Comment this out when running locally. This helps prevent rate limiting with groq.
-    max_rpm=2
+    max_rpm=max_rpm
 )
 
 ad_copy = copy_crew.kickoff()
@@ -64,8 +72,7 @@ image_crew = Crew(
         approve_photo
     ],
     verbose=True,
-    # TODO: Comment this out when running locally. This helps prevent rate limiting with groq.
-    max_rpm=2
+    max_rpm=max_rpm
 )
 
 image = image_crew.kickoff()
